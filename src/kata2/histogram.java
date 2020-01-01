@@ -8,8 +8,8 @@ class Histogram implements Iterable<Integer>{
     private final Map<Integer,Integer> counts = new TreeMap<>();
     
     public Histogram(int... values) {
-        for(int value : values){
-            counts.put(value, counts.getOrDefault(value, 0) + 1);
+        for (int value : values) {
+            counts.put(value, counts.containsKey(value) ? counts.get(value) + 1 : 1);
         }
     }
 
